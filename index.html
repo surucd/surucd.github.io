@@ -112,7 +112,7 @@ setInterval(displayTimeLeft, 1000);
 (function() {
  var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
  $.getJSON( flickerAPI, {
-  tags: "castles",
+  tags: "cats",
   tagmode: "any",
   format: "json"
   }).done(function( data ) {
