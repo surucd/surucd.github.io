@@ -7,7 +7,6 @@
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 <meta name="description" content="">
 <meta name="author" content="">
-<link rel="icon" href="../../favicon.ico">
 
 <title>Narrow Jumbotron Template for Bootstrap</title>
 
@@ -18,43 +17,148 @@
 
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+<script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
 <script>
 
+var finalDate = new Date("Feb 5, 2019");
+
+function getTimeLeft(){
+  var now = new Date();
+  var oneDay = 1000*24*60*60; // milliseconds in a day
+  var timeLeft = finalDate - now;
+  var daysLeft = timeLeft / oneDay;
+  var yearsLeft = 0;
+  var monthsLeft = 0;
+  
+  var hoursLeft = 0;
+  var minutesLeft = 0;
+  var secondsLeft = 0;
+  var millisecondsLeft = 0;
+
+  if (daysLeft > 365){
+    // more than one year
+    yearsLeft = daysLeft / 365;
+    daysLeft = ( yearsLeft % 1 ) * 365;
+  }
+  if (daysLeft > 30){
+    // more than a month
+    monthsLeft = ( yearsLeft % 1 ) * 12;
+    daysLeft = (monthsLeft % 1) * 30;
+  }
+
+  if (daysLeft > 24){
+    hoursLeft = ( daysLeft % 1 ) * 24;
+  }
+  else
+    hoursLeft = daysLeft;
+
+  if (hoursLeft > 1){
+    minutesLeft = ( hoursLeft % 1 ) * 60;
+  }
+  else
+    minutesLeft = hoursLeft;
 
 
-!function(a){"use strict";a.extend=function(b,c){if(b=b||{},arguments.length>2)for(var d=1;d<arguments.length;d++)a.extend(b,arguments[d]);else for(var e in c)b[e]=c[e];return b};var b=function(b){this.conf=a.extend({dateStart:new Date,dateEnd:new Date((new Date).getTime()+864e5),selector:".timer",msgBefore:"Be ready!",msgAfter:"It's over, sorry folks!",msgPattern:"{days} days, {hours} hours, {minutes} minutes and {seconds} seconds left.",onStart:null,onEnd:null,leadingZeros:!1,initialize:!0},b),this.started=!1,this.selector=document.querySelectorAll(this.conf.selector),this.interval=1e3,this.patterns=[{pattern:"{years}",secs:31536e3},{pattern:"{months}",secs:2628e3},{pattern:"{weeks}",secs:604800},{pattern:"{days}",secs:86400},{pattern:"{hours}",secs:3600},{pattern:"{minutes}",secs:60},{pattern:"{seconds}",secs:1}],this.initialize!==!1&&this.initialize()};b.prototype.initialize=function(){return this.defineInterval(),this.isOver()?this.outOfInterval():void this.run()},b.prototype.seconds=function(a){return a.getTime()/1e3},b.prototype.isStarted=function(){return this.seconds(new Date)>=this.seconds(this.conf.dateStart)},b.prototype.isOver=function(){return this.seconds(new Date)>=this.seconds(this.conf.dateEnd)},b.prototype.run=function(){var b,c=this,d=Math.abs(this.seconds(this.conf.dateEnd)-this.seconds(new Date));this.isStarted()?this.display(d):this.outOfInterval(),b=a.setInterval(function(){d--,0>=d?(a.clearInterval(b),c.outOfInterval(),c.callback("end")):c.isStarted()&&(c.started||(c.callback("start"),c.started=!0),c.display(d))},this.interval)},b.prototype.display=function(a){for(var b=this.conf.msgPattern,c=0;c<this.patterns.length;c++){var d=this.patterns[c];if(-1!==this.conf.msgPattern.indexOf(d.pattern)){var e=Math.floor(a/d.secs),f=this.conf.leadingZeros&&9>=e?"0"+e:e;a-=e*d.secs,b=b.replace(d.pattern,f)}}for(var g=0;g<this.selector.length;g++)this.selector[g].innerHTML=b},b.prototype.defineInterval=function(){for(var a=this.patterns.length;a>0;a--){var b=this.patterns[a-1];if(-1!==this.conf.msgPattern.indexOf(b.pattern))return void(this.interval=1e3*b.secs)}},b.prototype.outOfInterval=function(){for(var a=new Date<this.conf.dateStart?this.conf.msgBefore:this.conf.msgAfter,b=0;b<this.selector.length;b++)this.selector[b].innerHTML!==a&&(this.selector[b].innerHTML=a)},b.prototype.callback=function(b){var c=b.capitalize();"function"==typeof this.conf["on"+c]&&this.conf["on"+c](),"undefined"!=typeof a.jQuery&&a.jQuery(this.conf.selector).trigger("countdown"+c)},String.prototype.capitalize=function(){return this.charAt(0).toUpperCase()+this.slice(1)},a.Countdown=b}(window);
+  secondsLeft = ( minutesLeft % 1 ) * 60;
 
-// Instanciating a new countdown with all defaults
-new Countdown();
+  millisecondsLeft = ( secondsLeft % 1 ) * 1000;
 
-// Instanciating a custom countdown
-var countdown = new Countdown({
-  selector: '#timer',
-  msgPattern: "{days} days, {hours} hours and {minutes} minutes",
-  dateStart: new Date('2013/12/25 12:00'),
-  dateEnd: new Date('Feb 5, 2019 12:00')
-});
+  out = [];
+
+  if (yearsLeft != 0){
+    out.push(Math.floor(yearsLeft));
+    out.push("years");
+  }
+  if (monthsLeft != 0){
+    out.push(Math.floor(monthsLeft));
+    out.push("months");
+  }
+  if (daysLeft != 0){
+    out.push(Math.floor(daysLeft));
+    out.push("days");
+  }
+  if (hoursLeft != 0){
+    out.push(Math.floor(hoursLeft));
+    out.push("hours");
+  }
+  if (minutesLeft != 0){
+    out.push(Math.floor(minutesLeft));
+    out.push("minutes");
+  }
+  if (secondsLeft != 0){
+    out.push(Math.floor(secondsLeft));
+    out.push("seconds");
+  }
+  if (millisecondsLeft != 0)
+    out.push(Math.floor(millisecondsLeft));
+    out.push("ms");
+
+  return out.join(" ");
+}
+
+
+function displayTimeLeft(){
+  var span = document.getElementById("timer");
+  span.innerHTML = getTimeLeft();
+}
+
+setInterval(displayTimeLeft, 1000);
+
+
+(function() {
+ var flickerAPI = "http://tambal.azurewebsites.net/joke/random";
+ $.getJSON( flickerAPI, {
+})
+ .done(function( data ) {
+   console.log(data);
+       });
+ })();
+
+
+(function() {
+ var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+ $.getJSON( flickerAPI, {
+  tags: "cats",
+  tagmode: "any",
+  format: "json"
+  }).done(function( data ) {
+    $.each( data.items, function( i, item ) {
+        $( "<img>" ).attr( "src", item.media.m ).addClass("img-rounded col col-sm-3").attr("width", "250px").attr("height", "250px").appendTo( "#images" );
+        if ( i === 3 ) {
+        return false;
+        }
+      });
+    });
+ })();
+
 
 </script>
 
-</head>
+<style>
+
+</style>
+
 
 <body>
 
 <div class="container">
-  <div class="header clearfix">
-    <h3 class="text-muted">Count Down Till 2019, Feb 5<sup>th</sup></h3>
+  <div class="header clearfix" align=center>
+    <h3 class="text-muted">Count Down Till Feb 5<sup>th</sup>, 2019</h3>
   </div>
 
-  <div class="jumbotron">
-    <h2>You can talk to suruchi in <span class="lead" id="timer"></span> </h2>
+  <div class="jumbotron" style="background-color: ">
+    <h3>Suru, we can (permissibly) talk in <span class="lead" id="timer"></span> </h3>
+  </div>
+  <p>
+    Just a little something incase you loose track of how long it's been.
+  </p>
+  <div class="label label-info">
+    Here's some pics of cats for you :P
   </div>
 
-
+  <div class="container-fluid" id="images"></div>
 
 </div> <!-- /container -->
 
