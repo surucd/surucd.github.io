@@ -1,1 +1,68 @@
-test
+CTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" href="../../favicon.ico">
+
+<title>Narrow Jumbotron Template for Bootstrap</title>
+
+<head>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+<script>
+count=30;
+
+var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
+
+function timer()
+{
+    count=count-1;
+      if (count <= 0)
+          {
+                 clearInterval(counter);
+                      return;
+                        }
+
+       document.getElementById("timer").innerHTML=count + " secs"; // watch for spelling
+}
+
+
+</head>
+
+<body>
+
+<div class="container">
+  <div class="header clearfix">
+    <h3 class="text-muted">Count Down Till 2019, Feb 5<sup>th</sup></h3>
+  </div>
+
+  <div class="jumbotron">
+    <h1>You can talk to suruchi in </h1>
+    <p class="lead" id="timer"></p>
+  </div>
+
+
+  <footer class="footer">
+    <p>&copy; kichobhi</p>
+  </footer>
+
+</div> <!-- /container -->
+
+
+</body>
+</html>
+
+
