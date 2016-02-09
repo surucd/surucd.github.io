@@ -8,7 +8,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Narrow Jumbotron Template for Bootstrap</title>
+<title>Finding Suru</title>
 
 <head>
 
@@ -107,25 +107,6 @@ function displayTimeLeft(){
 setInterval(displayTimeLeft, 1000);
 
 
-
-
-(function() {
- var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
- $.getJSON( flickerAPI, {
-  tags: "cats",
-  tagmode: "any",
-  format: "json"
-  }).done(function( data ) {
-    $.each( data.items, function( i, item ) {
-        $( "<img>" ).attr( "src", item.media.m ).addClass("img-rounded col col-sm-3").attr("width", "250px").attr("height", "250px").appendTo( "#images" );
-        if ( i === 3 ) {
-        return false;
-        }
-      });
-    });
- })();
-
-
 </script>
 
 
@@ -146,9 +127,6 @@ setInterval(displayTimeLeft, 1000);
   <div class=" well text-info">
     Here's some pics of cats for you :P
   </div>
-
-  <div class="container-fluid" id="images"></div>
-
 </div> <!-- /container -->
 
 
