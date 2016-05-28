@@ -15,87 +15,23 @@
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-<script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
+<style>
 
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}h1{font-size:2em;margin:0.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace, monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type="checkbox"],input[type="radio"]{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;padding:0}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:textfield;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:0.35em 0.625em 0.75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:bold}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}*:before,*:after{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}html{font-size:10px;-webkit-tap-highlight-color:rgba(0,0,0,0)}body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:14px;line-height:1.42857143;color:#333;background-color:#fff}input,button,select,textarea{font-family:inherit;font-size:inherit;line-height:inherit}a{color:#337ab7;text-decoration:none}a:hover,a:focus{color:#23527c;text-decoration:underline}a:focus{outline:thin dotted;outline:5px auto -webkit-focus-ring-color;outline-offset:-2px}figure{margin:0}img{vertical-align:middle}.img-responsive{display:block;max-width:100%;height:auto}.img-rounded{border-radius:6px}.img-thumbnail{padding:4px;line-height:1.42857143;background-color:#fff;border:1px solid #ddd;border-radius:4px;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;transition:all .2s ease-in-out;display:inline-block;max-width:100%;height:auto}.img-circle{border-radius:50%}hr{margin-top:20px;margin-bottom:20px;border:0;border-top:1px solid #eee}.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);border:0}.sr-only-focusable:active,.sr-only-focusable:focus{position:static;width:auto;height:auto;margin:0;overflow:visible;clip:auto}[role="button"]{cursor:pointer}.label{display:inline;padding:.2em .6em .3em;font-size:75%;font-weight:bold;line-height:1;color:#fff;text-align:center;white-space:nowrap;vertical-align:baseline;border-radius:.25em}a.label:hover,a.label:focus{color:#fff;text-decoration:none;cursor:pointer}.label:empty{display:none}.btn .label{position:relative;top:-1px}.label-default{background-color:#777}.label-default[href]:hover,.label-default[href]:focus{background-color:#5e5e5e}.label-primary{background-color:#337ab7}.label-primary[href]:hover,.label-primary[href]:focus{background-color:#286090}.label-success{background-color:#5cb85c}.label-success[href]:hover,.label-success[href]:focus{background-color:#449d44}.label-info{background-color:#5bc0de}.label-info[href]:hover,.label-info[href]:focus{background-color:#31b0d5}.label-warning{background-color:#f0ad4e}.label-warning[href]:hover,.label-warning[href]:focus{background-color:#ec971f}.label-danger{background-color:#d9534f}.label-danger[href]:hover,.label-danger[href]:focus{background-color:#c9302c}.jumbotron{padding-top:30px;padding-bottom:30px;margin-bottom:30px;color:inherit;background-color:#eee}.jumbotron h1,.jumbotron .h1{color:inherit}.jumbotron p{margin-bottom:15px;font-size:21px;font-weight:200}.jumbotron>hr{border-top-color:#d5d5d5}.container .jumbotron,.container-fluid .jumbotron{border-radius:6px;padding-left:15px;padding-right:15px}.jumbotron .container{max-width:100%}@media screen and (min-width:768px){.jumbotron{padding-top:48px;padding-bottom:48px}.container .jumbotron,.container-fluid .jumbotron{padding-left:60px;padding-right:60px}.jumbotron h1,.jumbotron .h1{font-size:63px}}.clearfix:before,.clearfix:after{content:" ";display:table}.clearfix:after{clear:both}.center-block{display:block;margin-left:auto;margin-right:auto}.pull-right{float:right !important}.pull-left{float:left !important}.hide{display:none !important}.show{display:block !important}.invisible{visibility:hidden}.text-hide{font:0/0 a;color:transparent;text-shadow:none;background-color:transparent;border:0}.hidden{display:none !important}.affix{position:fixed}.timeLeft {position: fixed;top: 50%;left: 50%;width:80%;-webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);}
+
+</style>
 
 <script>
 
-var finalDate = new Date("Feb 5, 2019");
+var finalDate = new Date("Jan 1, 2019");
 
 function getTimeLeft(){
   var now = new Date();
-  var oneDay = 1000*24*60*60*100; // milliseconds in a day
-  var timeLeft = finalDate - now;
-  var daysLeft = timeLeft / oneDay;
-  var yearsLeft = 0;
-  var monthsLeft = 0;
-  
-  var hoursLeft = 0;
-  var minutesLeft = 0;
-  var secondsLeft = 0;
-  var millisecondsLeft = 0;
+  var diff = new Date (finalDate - now);
+  var iniD = new Date(0);
 
-  if (daysLeft > 365){
-    // more than one year
-    yearsLeft = daysLeft / 365;
-    daysLeft = ( yearsLeft % 1 ) * 365;
-  }
-  if (daysLeft > 30){
-    // more than a month
-    monthsLeft = ( yearsLeft % 1 ) * 12;
-    daysLeft = (monthsLeft % 1) * 30;
-  }
+  return (diff.getYear() - iniD.getYear()).toString() + " years, " + diff.getMonth().toString() + " months, " + diff.getHours().toString() + " hours, " + diff.getMinutes().toString() + " minutes, " + diff.getSeconds().toString() + " seconds";
 
-  if (daysLeft > 24){
-    hoursLeft = ( daysLeft % 1 ) * 24;
-  }
-  else
-    hoursLeft = daysLeft;
-
-  if (hoursLeft > 1){
-    minutesLeft = ( hoursLeft % 1 ) * 60;
-  }
-  else
-    minutesLeft = hoursLeft;
-
-
-  secondsLeft = ( minutesLeft % 1 ) * 60;
-
-  millisecondsLeft = ( secondsLeft % 1 ) * 1000;
-
-  out = [];
-
-  if (yearsLeft != 0){
-    out.push(Math.floor(yearsLeft));
-    out.push("years");
-  }
-  if (monthsLeft != 0){
-    out.push(Math.floor(monthsLeft));
-    out.push("months");
-  }
-  if (daysLeft != 0){
-    out.push(Math.floor(daysLeft));
-    out.push("days");
-  }
-  if (hoursLeft != 0){
-    out.push(Math.floor(hoursLeft));
-    out.push("hours");
-  }
-  if (minutesLeft != 0){
-    out.push(Math.floor(minutesLeft));
-    out.push("minutes");
-  }
-  if (secondsLeft != 0){
-    out.push(Math.floor(secondsLeft));
-    out.push("seconds");
-  }
-  if (millisecondsLeft != 0)
-    out.push(Math.floor(millisecondsLeft));
-    out.push("ms");
-
-  return out.join(" ");
 }
 
 
@@ -112,22 +48,15 @@ setInterval(displayTimeLeft, 1000);
 
 
 <body>
-
-<div class="container">
+<div class="container-fluid">
   <div class="header clearfix" align=center>
-    <h3 class="text-muted">Count Down Till Feb 5<sup>th</sup>, 2019</h3>
+    <h3 class="text-primary">Count Down Till Jan 1<sup>st</sup>, 2019</h3>
   </div>
 
-  <div class="jumbotron" style="background-color: ">
-    <h3>Suru, we can (permissibly) talk in <span class="lead" id="timer"></span> </h3>
+  <div class="jumbotron timeLeft" style="background-color: " align=center>
+    <h3>Suru, we can permissibly talk in <span class="lead" id="timer"></span> </h3>
   </div>
-  <p class="text-info">
-    Just a little something incase you loose track of how long it's been.
-  </p>
 </div> <!-- /container -->
-
 
 </body>
 </html>
-
-
