@@ -26,7 +26,7 @@ var finalDate = new Date("Feb 5, 2019");
 
 function getTimeLeft(){
   var now = new Date();
-  var oneDay = 1000*24*60*60; // milliseconds in a day
+  var oneDay = 1000*24*60*60*100; // milliseconds in a day
   var timeLeft = finalDate - now;
   var daysLeft = timeLeft / oneDay;
   var yearsLeft = 0;
